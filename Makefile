@@ -25,12 +25,12 @@ createinvokes1:
 	
 	python -u invokesCreator.py 8 >> database/transactions/multiout.out && python -u invokesCreator.py 9 >> database/transactions/multiout.out && python -u invokesCreator.py 10 >> database/transactions/multiout.out &
 	
-	python -u invokesCreator.py 11 >> database/transactions/multiout.out && python -u invokesCreator.py 12 >> database/transactions/multiout.out && python -u invokesCreator.py 13 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 11 >> database/transactions/multiout.out && python -u invokesCreator.py 12 >> database/transactions/multiout.out &
 
 createinvokes2:
-	python -u invokesCreator.py 14 >> database/transactions/multiout.out &&	python -u invokesCreator.py 15 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 13 >> database/transactions/multiout.out && python -u invokesCreator.py 14 >> database/transactions/multiout.out &
 	
-	python -u invokesCreator.py 16 >> database/transactions/multiout.out && python -u invokesCreator.py 17 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 15 >> database/transactions/multiout.out && python -u invokesCreator.py 16 >> database/transactions/multiout.out && python -u invokesCreator.py 17 >> database/transactions/multiout.out &
 	
 	python -u invokesCreator.py 18 >> database/transactions/multiout.out && python -u invokesCreator.py 19 >> database/transactions/multiout.out && python -u invokesCreator.py 20 >> database/transactions/multiout.out &
 	
@@ -43,7 +43,7 @@ createcc:
 
 cluster:
 	mkdir -p results
-	
+
 
 # filldbs: createinvokes createcc
 
