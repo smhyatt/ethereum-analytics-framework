@@ -164,7 +164,7 @@ def main():
     idx = 0
     translist.sort()
 
-    contCFilename = 'contcdata'+ str(val) +'.hdf5'
+    contCFilename = 'contcdata.hdf5'
     contCDB = h5py.File('database/CC/'+contCFilename, 'a')
 
     ownership = contCDB.require_group('ownership')
