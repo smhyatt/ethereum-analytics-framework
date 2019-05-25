@@ -30,7 +30,7 @@ def getContractNames(path, jsonfile):
 
 
 def main():
-    path = "/home/dikuprojects/eth/ethchain/ethereumchain"
+    path = "../ethereumchain"
     filelist = os.listdir(path)
     translist = []
     for file in filelist:
