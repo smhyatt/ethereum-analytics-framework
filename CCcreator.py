@@ -143,7 +143,7 @@ def fileExecutor(contCDB, ownership, ownerFallouts, path, jsonlist):
 def main():
     global contractDict
 
-    jsonlist, contractLst = ([] for i in range(3)) 
+    jsonlist, contractLst = ([] for i in range(2)) 
 
     f = open('contractlist.txt', 'r').read()
     for con in f1:

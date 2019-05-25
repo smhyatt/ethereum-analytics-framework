@@ -199,7 +199,7 @@ def fileExecutor(tokenDset, transDset, con2CDset, path, jsonlist):
 
         addTokens(tokenDset, tokens)
         addTransactions(transDset, transactions)
-        addConsToCons(con2CDset, cons2cons):
+        addConsToCons(con2CDset, cons2cons)
 
 
         fileEndTime  = time.time() - fileStartTime
