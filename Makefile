@@ -41,6 +41,10 @@ createinvokes2:
 createcc:
 	python -u CCcreator.py >> database/CC/multiout.out &
 
-filldbs: createinvokes createcc
+cluster:
+	mkdir -p results
+	
 
-cleanrun: cleanall filldbs
+# filldbs: createinvokes createcc
+
+# cleanrun: cleanall filldbs
