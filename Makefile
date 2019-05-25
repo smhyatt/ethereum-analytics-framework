@@ -14,7 +14,7 @@ invokesclean:
 	echo '' > database/transactions/multiout.out
 	python invokessetup.py
 
-cleanall: CCclean invokesclean
+cleanall: ccclean invokesclean
 
 createinvokes: 
 	python -u invokesCreator.py 0 >> database/transactions/multiout.out &
