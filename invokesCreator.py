@@ -222,7 +222,7 @@ def main(arg):
     global contractDict
     global tokenContractDict
 
-    jsonlist, tokenLst = ([] for i in range(2)) 
+    jsonlist, contractLst, tokenLst = ([] for i in range(3)) 
 
     f1 = open('contractlist.txt', 'r').read()
     for con in f1:
