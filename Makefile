@@ -1,6 +1,6 @@
 ccclean:
 	mkdir -p database/CC
-	rm -r database/CC 
+	rm -rf database/CC 
 	echo '' > database/CC/seenfiles.txt
 	echo '' > database/CC/timespan.txt
 	echo '' > database/CC/multiout.out
@@ -8,7 +8,7 @@ ccclean:
 
 invokesclean:
 	mkdir -p database/transactions
-	rm -r database/transactions
+	rm -rf database/transactions
 	echo '' > database/transactions/seenfiles.txt
 	echo '' > database/transactions/timespan.txt
 	echo '' > database/transactions/multiout.out
