@@ -146,7 +146,7 @@ def main():
     jsonlist, contractLst = ([] for i in range(2)) 
 
     f = open('contractlist.txt', 'r').read()
-    for con in f1:
+    for con in f:
         newcon = con[:-1]
         contractLst.append(newcon)
 
