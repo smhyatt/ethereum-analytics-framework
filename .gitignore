@@ -1,3 +1,4 @@
 .DS_Store
 tokencontractlist.txt
 contractlist.txt
+*.hdf5

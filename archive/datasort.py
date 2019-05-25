@@ -8,7 +8,6 @@ import gzip
 import re
 import sys
 
-global contractDict
 global curContract
 global curFromAdr
 global matchName
