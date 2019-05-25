@@ -1,14 +1,14 @@
 ccclean:
+	rm -rf database/CC/*
 	mkdir -p database/CC
-	rm -rf database/CC 
 	echo '' > database/CC/seenfiles.txt
 	echo '' > database/CC/timespan.txt
 	echo '' > database/CC/multiout.out
 	python CCsetup.py
 
 invokesclean:
+	rm -rf database/transactions/*
 	mkdir -p database/transactions
-	rm -rf database/transactions
 	echo '' > database/transactions/seenfiles.txt
 	echo '' > database/transactions/timespan.txt
 	echo '' > database/transactions/multiout.out
