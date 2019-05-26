@@ -43,7 +43,8 @@ createcc:
 cluster:
 	-mkdir -p results
 
-intreesetup:
+treesetup:
+	rm -rf database/framework/*
 	-mkdir -p database/framework
 	python getinvokessetup
 
