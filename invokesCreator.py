@@ -224,7 +224,7 @@ def main(arg):
 
     jsonlist, contractLst, tokenLst = ([] for i in range(3)) 
 
-    f1 = open('contractlist.txt', 'r').read()
+    f1 = open('contractlist.txt', 'r')
     for con in f1:
         # print(con)
         newcon = con[:-1]
@@ -234,7 +234,7 @@ def main(arg):
     contractDict = dict.fromkeys(contractLst)
 
 
-    f2 = open('tokencontractlist.txt', 'r').read()
+    f2 = open('tokencontractlist.txt', 'r')
     for tok in f2:
         print(tok)
         newtok = tok[:-1]
