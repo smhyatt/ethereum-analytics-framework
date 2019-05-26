@@ -226,9 +226,7 @@ def main(arg):
 
     f1 = open('contractlist.txt', 'r')
     for con in f1:
-        # print(con)
         newcon = con[:-1]
-        # print(newcon)
         contractLst.append(newcon)
 
     contractDict = dict.fromkeys(contractLst)
@@ -236,56 +234,54 @@ def main(arg):
 
     f2 = open('tokencontractlist.txt', 'r')
     for tok in f2:
-        # print(tok)
         newtok = tok[:-1]
-        print(newtok)
         tokenLst.append(newtok)
 
     tokenContractDict = dict.fromkeys(tokenLst)
 
 
-    # path = "/home/crj405/sarah/ethereumchain"
-    # filelist = os.listdir(path)
-    # translist = []
-    # for file in filelist:
-    #     filetype = (file.split("-"))
-    #     if filetype[1] == 'transactions':
-    #         translist.append(file)
+    path = "/home/crj405/sarah/ethereumchain"
+    filelist = os.listdir(path)
+    translist = []
+    for file in filelist:
+        filetype = (file.split("-"))
+        if filetype[1] == 'transactions':
+            translist.append(file)
 
-    # idx = 0
-    # translist.sort()
+    idx = 0
+    translist.sort()
 
-    # tokenFilename = 'tokendata'+ str(val) +'.hdf5'
-    # transFilename = 'transdata'+ str(val) +'.hdf5'
-    # callsFilename = 'callsdata'+ str(val) +'.hdf5'
+    tokenFilename = 'tokendata'+ str(val) +'.hdf5'
+    transFilename = 'transdata'+ str(val) +'.hdf5'
+    callsFilename = 'callsdata'+ str(val) +'.hdf5'
 
-    # tokenDB = h5py.File('database/transactions/'+tokenFilename, 'a')
-    # transDB = h5py.File('database/transactions/'+transFilename, 'a')
-    # con2CDB = h5py.File('database/transactions/'+callsFilename, 'a')
+    tokenDB = h5py.File('database/transactions/'+tokenFilename, 'a')
+    transDB = h5py.File('database/transactions/'+transFilename, 'a')
+    con2CDB = h5py.File('database/transactions/'+callsFilename, 'a')
 
-    # tokenDset = tokenDB['tokens']
-    # transDset = transDB['transactions']
-    # con2CDset = con2CDB['contractTransfers']
+    tokenDset = tokenDB['tokens']
+    transDset = transDB['transactions']
+    con2CDset = con2CDB['contractTransfers']
 
-    # for tf in translist:
-    #     file = str(tf)
+    for tf in translist:
+        file = str(tf)
         
-    #     if idx < val*88:
-    #         idx += 1
-    #         continue
+        if idx < val*88:
+            idx += 1
+            continue
 
-    #     if file+'\n' in open("database/transactions/seenfiles.txt").read():   # check if we have already read this file before
-    #         print("Skipped file:", file)
-    #         continue                                    # if so, continue to the next file
+        if file+'\n' in open("database/transactions/seenfiles.txt").read():   # check if we have already read this file before
+            print("Skipped file:", file)
+            continue                                    # if so, continue to the next file
 
-    #     if idx-(val*88) == 88:
-    #         break
+        if idx-(val*88) == 88:
+            break
 
-    #     jsonlist.append(file)
-    #     idx += 1
+        jsonlist.append(file)
+        idx += 1
 
-    # fileExecutor(tokenDset, transDset, con2CDset, path, jsonlist)
-    # print("FINISHED")
+    fileExecutor(tokenDset, transDset, con2CDset, path, jsonlist)
+    print("FINISHED")
 
     tokenDB.close()
     transDB.close()
