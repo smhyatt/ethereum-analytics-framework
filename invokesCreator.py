@@ -265,13 +265,14 @@ def main(arg):
 
     for tf in translist:
         file = str(tf)
-        if file+'\n' in open("database/transactions/seenfiles.txt").read():   # check if we have already read this file before
-            print("Skipped file:", file)
-            continue                                    # if so, continue to the next file
-
+        
         if idx < val*50:
             idx += 1
             continue
+
+        if file+'\n' in open("database/transactions/seenfiles.txt").read():   # check if we have already read this file before
+            print("Skipped file:", file)
+            continue                                    # if so, continue to the next file
 
         if idx-(val*50) == 50:
             break
