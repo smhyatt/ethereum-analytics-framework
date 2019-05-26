@@ -181,11 +181,12 @@ def fileExecutor(tokenDset, transDset, con2CDset, path, jsonlist):
     for jsonfile in jsonlist:
         fileStartTime = time.time()
         (tokenList, transactionList) = sortData(path, jsonfile)
+        
+        tokens, cons2cons, transactions = ([] for i in range(3)) 
 
         tranRes = sortTransactions(transactionList)
         tokens  = sortTokens(tokenList)
 
-        tokens, cons2cons, transactions = ([] for i in range(3)) 
 
         for el in tranRes:
             elem = el[0]
