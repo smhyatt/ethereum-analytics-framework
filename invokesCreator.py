@@ -236,7 +236,7 @@ def main(arg):
 
     f2 = open('tokencontractlist.txt', 'r')
     for tok in f2:
-        print(tok)
+        # print(tok)
         newtok = tok[:-1]
         print(newtok)
         tokenLst.append(newtok)
