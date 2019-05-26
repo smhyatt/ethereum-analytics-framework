@@ -40,8 +40,12 @@ createinvokes3:
 createcc:
 	python -u CCcreator.py >> database/CC/multiout.out &
 
-cluster:
-	-mkdir -p results
+numclusters:
+	./numclusters.sh
+
+# Remember to add the number of clusters to the bash script.
+clusters:
+	./clusters.sh	
 
 treesetup:
 	rm -rf database/framework/*
