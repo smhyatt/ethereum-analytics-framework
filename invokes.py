@@ -91,7 +91,7 @@ def createTree(callLst, invokDB):
 def main():
     callsDset = []
 
-    for i in range(27):
+    for i in range(15):
         filename = 'database/transactions/callsdata'+str(i)+'.hdf5'
         callsDB = h5py.File(filename, 'r')
         callsDset += callsDB['contractTransfers']
@@ -114,7 +114,7 @@ def main():
 #     invokDB = h5py.File(invokFilename, 'a')
 #     calltree = invokDB.require_group('calltree')
 
-#     for i in range(27):
+#     for i in range(15):
 #         filename = 'database/transactions/callsdata'+str(i)+'.hdf5'
 #         callsDB = h5py.File(filename, 'r')
 #         callsDset = callsDB['contractTransfers']
