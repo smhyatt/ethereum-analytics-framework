@@ -266,7 +266,7 @@ def main(arg):
     for tf in translist:
         file = str(tf)
         
-        if idx < val*50:
+        if idx < val*88:
             idx += 1
             continue
 
@@ -274,7 +274,7 @@ def main(arg):
             print("Skipped file:", file)
             continue                                    # if so, continue to the next file
 
-        if idx-(val*50) == 50:
+        if idx-(val*88) == 88:
             break
 
         jsonlist.append(file)

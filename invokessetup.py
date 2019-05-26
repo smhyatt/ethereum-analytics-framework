@@ -1,5 +1,5 @@
 import h5py
-for i in range(27):
+for i in range(15):
     tokenFilename = 'tokendata'+str(i)+'.hdf5'
     transFilename = 'transdata'+str(i)+'.hdf5'
     callsFilename = 'callsdata'+str(i)+'.hdf5'
