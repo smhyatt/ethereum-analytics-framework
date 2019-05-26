@@ -187,6 +187,9 @@ def fileExecutor(tokenDset, transDset, con2CDset, path, jsonlist):
         tranRes = sortTransactions(transactionList)
         tokens  = sortTokens(tokenList)
 
+        print(tokens)
+        print(tokens.shape())
+
 
         for el in tranRes:
             elem = el[0]
