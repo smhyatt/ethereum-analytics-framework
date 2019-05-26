@@ -97,8 +97,7 @@ def main():
         callsDset += callsDB['contractTransfers']
         callsDB.close()
 
-    print("Done with databases.")
-    invokFilename = 'database/framework/invokestree.hdf5'
+    invokFilename = 'database/trees/invokestree.hdf5'
     invokDB = h5py.File(invokFilename, 'a')
     calltree = invokDB.require_group('calltree')
 
@@ -109,9 +108,9 @@ def main():
 
 
 
-# Requires pre-sorted databases
+# # Requires pre-sorted databases
 # def main():
-#     invokFilename = 'database/framework/invokestree.hdf5'
+#     invokFilename = 'database/trees/invokestree.hdf5'
 #     invokDB = h5py.File(invokFilename, 'a')
 #     calltree = invokDB.require_group('calltree')
 

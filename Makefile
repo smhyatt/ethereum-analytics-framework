@@ -1,6 +1,6 @@
 ccclean:
 	rm -rf database/CC/*
-	mkdir -p database/CC
+	-mkdir -p database/CC
 	echo '' > database/CC/seenfiles.txt
 	echo '' > database/CC/timespan.txt
 	echo '' > database/CC/multiout.out
@@ -8,7 +8,7 @@ ccclean:
 
 invokesclean:
 	rm -rf database/transactions/*
-	mkdir -p database/transactions
+	-mkdir -p database/transactions
 	echo '' > database/transactions/seenfiles.txt
 	echo '' > database/transactions/timespan.txt
 	echo '' > database/transactions/multiout.out
@@ -41,7 +41,17 @@ createcc:
 	python -u CCcreator.py >> database/CC/multiout.out &
 
 cluster:
-	mkdir -p results
+	-mkdir -p results
+
+intreesetup:
+	-mkdir -p database/framework
+	python getinvokessetup
+
+invokestree:
+	python -u invokes.py
+
+segmentedinvokestree:
+	python -u segmentedInvokes.py
 
 
 # filldbs: createinvokes createcc

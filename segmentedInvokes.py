@@ -88,43 +88,42 @@ def createTree(callLst, invokDB):
 
 
 # Does not require pre-sorted databases
-def main():
-    callsDset = []
-
-    for i in range(15):
-        filename = 'database/transactions/callsdata'+str(i)+'.hdf5'
-        callsDB = h5py.File(filename, 'r')
-        callsDset += callsDB['contractTransfers']
-        callsDB.close()
-
-    print("Done with databases.")
-    invokFilename = 'database/framework/invokestree.hdf5'
-    invokDB = h5py.File(invokFilename, 'a')
-    calltree = invokDB.require_group('calltree')
-
-    callLst = getConToCon(callsDset)
-    createTree(callLst, calltree)
-
-    invokDB.close()
-
-
-
-# Requires pre-sorted databases
 # def main():
-#     invokFilename = 'database/framework/invokestree.hdf5'
-#     invokDB = h5py.File(invokFilename, 'a')
-#     calltree = invokDB.require_group('calltree')
+#     callsDset = []
 
 #     for i in range(15):
 #         filename = 'database/transactions/callsdata'+str(i)+'.hdf5'
 #         callsDB = h5py.File(filename, 'r')
-#         callsDset = callsDB['contractTransfers']
+#         callsDset += callsDB['contractTransfers']
 #         callsDB.close()
 
-#         callLst = getConToCon(callsDset)
-#         createTree(callLst, calltree)
+#     invokFilename = 'database/framework/invokestree.hdf5'
+#     invokDB = h5py.File(invokFilename, 'a')
+#     calltree = invokDB.require_group('calltree')
+
+#     callLst = getConToCon(callsDset)
+#     createTree(callLst, calltree)
 
 #     invokDB.close()
+
+
+
+# Requires pre-sorted databases
+def main():
+    invokFilename = 'database/framework/invokestree.hdf5'
+    invokDB = h5py.File(invokFilename, 'a')
+    calltree = invokDB.require_group('calltree')
+
+    for i in range(15):
+        filename = 'database/transactions/callsdata'+str(i)+'.hdf5'
+        callsDB = h5py.File(filename, 'r')
+        callsDset = callsDB['contractTransfers']
+        callsDB.close()
+
+        callLst = getConToCon(callsDset)
+        createTree(callLst, calltree)
+
+    invokDB.close()
 
 
 
