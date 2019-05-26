@@ -50,7 +50,7 @@ clusters:
 treesetup:
 	rm -rf database/framework/*
 	-mkdir -p database/framework
-	python getinvokessetup
+	python getinvokessetup.py
 
 invokestree:
 	python -u invokes.py
