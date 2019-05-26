@@ -26,7 +26,7 @@ def getGroup(name, node):
 
 
 def getConToCon(callDset):
-    callDset = np.array(callDset)
+    # callDset = np.array(callDset)
     workLst = []
 
     for i in callDset:
@@ -90,8 +90,9 @@ def createTree(callLst, invokDB):
 # Does not require pre-sorted databases
 def main():
     callsDset = []
+    npLsts = []
 
-    for i in range(15):
+    for i in range(2):
         filename = 'database/transactions/callsdata'+str(i)+'.hdf5'
         callsDB = h5py.File(filename, 'r')
         callsDset += callsDB['contractTransfers']
@@ -102,8 +103,12 @@ def main():
     invokDB = h5py.File(invokFilename, 'a')
     calltree = invokDB.require_group('calltree')
 
-    callLst = getConToCon(callsDset)
-    createTree(callLst, calltree)
+    for nparr in callsDset:
+        npLsts += [nparr[i] for i in range(len(nparr))]
+
+    print(npLsts)
+    # callLst = getConToCon(npLsts)
+    # createTree(callLst, calltree)
 
     invokDB.close()
 
