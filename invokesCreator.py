@@ -99,7 +99,7 @@ def sortTokens(tokensLst):
 
         tokendata = np.array((str(fromAdr), str(toAdr), str(recipient), str(spender), str(fromCon), str(toCon), str(endReceiverIsEOA), str(timest),
         str(nonce), str(fstVal), str(sndVal)), dtype=h5py.special_dtype(vlen=str))
-        res.append((tokendata, True))
+        res.append(tokendata)
 
     return res
 
@@ -186,10 +186,6 @@ def fileExecutor(tokenDset, transDset, con2CDset, path, jsonlist):
 
         tranRes = sortTransactions(transactionList)
         tokens  = sortTokens(tokenList)
-
-        print(tokens)
-        print(tokens.shape())
-
 
         for el in tranRes:
             elem = el[0]
