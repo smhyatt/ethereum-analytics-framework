@@ -33,10 +33,13 @@ def getConToCon(callDset):
         fromAdr = i[0]
         toAdr   = i[1]
         endAdr  = i[2]
-        toCon   = i[4]
-        endEOA  = i[5]
-        timeSt  = i[6]
+        fromCon = i[4]
+        toCon   = i[5]
+        endEOA  = i[6]
+        timeSt  = i[7]
         # sndVal  = i[8:9]
+        print(toCon, endEOA)
+        print("***********", i[0])
         if (toCon == 'True') and (endEOA == 'False'):
             insrtLst = [toAdr, endAdr, timeSt]
             workLst.append(insrtLst)
