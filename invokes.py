@@ -92,7 +92,7 @@ def main():
     callsDset = []
     npLsts = []
 
-    for i in range(2):
+    for i in range(15):
         filename = 'database/transactions/callsdata'+str(i)+'.hdf5'
         callsDB = h5py.File(filename, 'r')
         callsDset += callsDB['contractTransfers']
@@ -106,9 +106,8 @@ def main():
     for nparr in callsDset:
         npLsts.append([nparr[i] for i in range(len(nparr))])
 
-    print(npLsts)
-    # callLst = getConToCon(npLsts)
-    # createTree(callLst, calltree)
+    callLst = getConToCon(npLsts)
+    createTree(callLst, calltree)
 
     invokDB.close()
 
