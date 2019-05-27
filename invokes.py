@@ -51,11 +51,12 @@ def createTree(callLst, invokDB):
     global curFromAdr
 
     for lst in callLst:
+        print(lst)
         fromAdr, toAdr, timeSt = [lst[i] for i in range(len(lst))]
 
         curFromAdr = fromAdr                # global current from address is se
         node = invokDB.visititems(getGroup) # checks if the fromAdr exists in the hole database
-        print(node)
+        # print(node)
 
         if matchName == curFromAdr:         # there is a match
             addr   = getAddr(str(node))     # get the path of the node
@@ -95,7 +96,7 @@ def main():
     callsDset = []
     npLsts = []
 
-    for i in range(15):
+    for i in range(1):
         filename = 'database/transactions/callsdata'+str(i)+'.hdf5'
         callsDB = h5py.File(filename, 'r')
         callsDset += callsDB['contractTransfers']
