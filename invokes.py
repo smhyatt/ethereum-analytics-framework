@@ -39,11 +39,13 @@ def getConToCon(callDset):
         timeSt  = i[7]
         # sndVal  = i[8:9]
         if (toCon == 'True') and (endEOA == 'False'):
+            print("In If")
             insrtLst = [toAdr, endAdr, timeSt]
+            print(insrtLst)
             workLst.append(insrtLst)
 
     res = workLst.sort(key=lambda x: x[2])
-
+    print("RES:",res)
     return res
 
 
