@@ -38,23 +38,22 @@ def getConToCon(callDset):
         endEOA  = i[6]
         timeSt  = i[7]
         # sndVal  = i[8:9]
-        print(type(toCon), type(endEOA))
+        #print(type(toCon), type(endEOA))
         if (toCon == 'True') and (endEOA == 'False'):
-            print("In If")
+           # print("In If")
             insrtLst = [toAdr, endAdr, timeSt]
-            print(insrtLst)
+           # print(insrtLst)
             workLst.append(insrtLst)
 
     res = workLst.sort(key=lambda x: x[2])
-    print("RES:",res)
-    return res
+    #print("RES:",res)
+    return workLst
 
 
 def createTree(callLst, invokDB):
     global curFromAdr
 
     for lst in callLst:
-        print(lst)
         fromAdr, toAdr, timeSt = [lst[i] for i in range(len(lst))]
 
         curFromAdr = fromAdr                # global current from address is se
@@ -99,7 +98,7 @@ def main():
     callsDset = []
     npLsts = []
 
-    for i in range(1):
+    for i in range(15):
         filename = 'database/transactions/callsdata'+str(i)+'.hdf5'
         callsDB = h5py.File(filename, 'r')
         callsDset += callsDB['contractTransfers']
