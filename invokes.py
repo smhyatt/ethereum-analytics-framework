@@ -38,6 +38,7 @@ def getConToCon(callDset):
         endEOA  = i[6]
         timeSt  = i[7]
         # sndVal  = i[8:9]
+        print(type(toCon), type(endEOA))
         if (toCon == 'True') and (endEOA == 'False'):
             print("In If")
             insrtLst = [toAdr, endAdr, timeSt]
