@@ -38,13 +38,10 @@ def getConToCon(callDset):
         endEOA  = i[6]
         timeSt  = i[7]
         # sndVal  = i[8:9]
-        print(toCon, endEOA)
-        print("***********", i[0])
         if (toCon == 'True') and (endEOA == 'False'):
             insrtLst = [toAdr, endAdr, timeSt]
             workLst.append(insrtLst)
 
-    print(workLst)
     res = workLst.sort(key=lambda x: x[2])
 
     return res
@@ -98,7 +95,7 @@ def main():
     callsDset = []
     npLsts = []
 
-    for i in range(1):
+    for i in range(15):
         filename = 'database/transactions/callsdata'+str(i)+'.hdf5'
         callsDB = h5py.File(filename, 'r')
         callsDset += callsDB['contractTransfers']
