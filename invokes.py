@@ -41,7 +41,12 @@ def getConToCon(callDset):
             insrtLst = [toAdr, endAdr, timeSt]
             workLst.append(insrtLst)
 
-    return workLst.sort(key=lambda x: x[2])
+    res = workLst.sort(key=lambda x: x[2])
+
+    for r in res:
+        print(r)
+
+    return res
 
 
 def createTree(callLst, invokDB):
