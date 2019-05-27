@@ -26,7 +26,7 @@ def getGroup(name, node):
 
 
 def getConToCon(callDset):
-    # callDset = np.array(callDset)
+    callDset = np.array(callDset)
     workLst = []
 
     for i in callDset:
@@ -104,7 +104,7 @@ def main():
     calltree = invokDB.require_group('calltree')
 
     for nparr in callsDset:
-        npLsts += [nparr[i] for i in range(len(nparr))]
+        npLsts.append([nparr[i] for i in range(len(nparr))])
 
     print(npLsts)
     # callLst = getConToCon(npLsts)
