@@ -4,7 +4,7 @@ ccclean:
 	echo '' > database/CC/seenfiles.txt
 	echo '' > database/CC/timespan.txt
 	echo '' > database/CC/multiout.out
-	python3 CCsetup.py
+	python CCsetup.py
 
 invokesclean:
 	rm -rf database/transactions/*
@@ -12,33 +12,33 @@ invokesclean:
 	echo '' > database/transactions/seenfiles.txt
 	echo '' > database/transactions/timespan.txt
 	echo '' > database/transactions/multiout.out
-	python3 invokessetup.py
+	python invokessetup.py
 
 cleanall: ccclean invokesclean
 
 createinvokes1:
-	python3 -u invokesCreator.py 0 >> database/transactions/multiout.out &
-	python3 -u invokesCreator.py 1 >> database/transactions/multiout.out &
-	python3 -u invokesCreator.py 2 >> database/transactions/multiout.out & 
-	python3 -u invokesCreator.py 3 >> database/transactions/multiout.out &
-	python3 -u invokesCreator.py 4 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 0 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 1 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 2 >> database/transactions/multiout.out & 
+	python -u invokesCreator.py 3 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 4 >> database/transactions/multiout.out &
 
 createinvokes2:	
-	python3 -u invokesCreator.py 5 >> database/transactions/multiout.out & 
-	python3 -u invokesCreator.py 6 >> database/transactions/multiout.out & 
-	python3 -u invokesCreator.py 7 >> database/transactions/multiout.out &
-	python3 -u invokesCreator.py 8 >> database/transactions/multiout.out & 
-	python3 -u invokesCreator.py 9 >> database/transactions/multiout.out & 
+	python -u invokesCreator.py 5 >> database/transactions/multiout.out & 
+	python -u invokesCreator.py 6 >> database/transactions/multiout.out & 
+	python -u invokesCreator.py 7 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 8 >> database/transactions/multiout.out & 
+	python -u invokesCreator.py 9 >> database/transactions/multiout.out & 
 	
 createinvokes3:
-	python3 -u invokesCreator.py 10 >> database/transactions/multiout.out &
-	python3 -u invokesCreator.py 11 >> database/transactions/multiout.out & 	
-	python3 -u invokesCreator.py 12 >> database/transactions/multiout.out &
-	python3 -u invokesCreator.py 13 >> database/transactions/multiout.out & 
-	python3 -u invokesCreator.py 14 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 10 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 11 >> database/transactions/multiout.out & 	
+	python -u invokesCreator.py 12 >> database/transactions/multiout.out &
+	python -u invokesCreator.py 13 >> database/transactions/multiout.out & 
+	python -u invokesCreator.py 14 >> database/transactions/multiout.out &
 
 createcc:
-	python3 -u CCcreator.py >> database/CC/multiout.out &
+	python -u CCcreator.py >> database/CC/multiout.out &
 
 numclusters:
 	./numclusters.sh
@@ -50,14 +50,14 @@ clusters:
 treesetup:
 	rm -rf database/framework/*
 	-mkdir -p database/framework
-	python3 getinvokessetup.py
+	python getinvokessetup.py
 
 invokestree:
-	python3 -u invokes.py
+	python -u invokes.py
 
 segmentedinvokestree:
-	python3 -u segmentedInvokes.py
+	python -u segmentedInvokes.py
 
 getreceiptcount:
-	python3 -u receiptStatusCount.py
+	python -u receiptStatusCount.py
 
