@@ -159,6 +159,8 @@ def main(arg):
 if __name__ == '__main__':
     startTime = time.time()
     main(sys.argv)
-    print("Total time: --- %s seconds ---" % (time.time() - startTime))
+    totalTime = time.time() - startTime
+    totalTime = float("{0:.3f}".format(totalTime))
+    print("Total time: {0} seconds.".format(totalTime))
 
 
