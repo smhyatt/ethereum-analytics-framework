@@ -38,15 +38,11 @@ def getConToCon(callDset):
         endEOA  = i[6]
         timeSt  = i[7]
         # sndVal  = i[8:9]
-        #print(type(toCon), type(endEOA))
         if (toCon == 'True') and (endEOA == 'False'):
-           # print("In If")
             insrtLst = [toAdr, endAdr, timeSt]
-           # print(insrtLst)
             workLst.append(insrtLst)
 
-    res = workLst.sort(key=lambda x: x[2])
-    #print("RES:",res)
+    workLst.sort(key=lambda x: x[2])
     return workLst
 
 
@@ -58,7 +54,6 @@ def createTree(callLst, invokDB):
 
         curFromAdr = fromAdr                # global current from address is se
         node = invokDB.visititems(getGroup) # checks if the fromAdr exists in the hole database
-        # print(node)
 
         if matchName == curFromAdr:         # there is a match
             addr   = getAddr(str(node))     # get the path of the node

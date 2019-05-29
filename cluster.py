@@ -163,4 +163,3 @@ if __name__ == '__main__':
     totalTime = float("{0:.3f}".format(totalTime))
     print("Total time: {0} seconds.".format(totalTime))
 
-

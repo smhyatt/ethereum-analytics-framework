@@ -153,7 +153,7 @@ def main():
     contractDict = dict.fromkeys(contractLst)
 
 
-    path = "/home/crj405/sarah/ethereumchain"
+    path = os.path.expanduser("~/chaindata/ethereum-transactions")
     filelist = os.listdir(path)
     translist = []
     for file in filelist:

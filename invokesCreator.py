@@ -240,7 +240,7 @@ def main(arg):
     tokenContractDict = dict.fromkeys(tokenLst)
 
 
-    path = "/home/crj405/sarah/ethereumchain"
+    path = os.path.expanduser("~/chaindata/ethereum-transactions")
     filelist = os.listdir(path)
     translist = []
     for file in filelist:
@@ -272,7 +272,7 @@ def main(arg):
 
         if file+'\n' in open("database/transactions/seenfiles.txt").read():   # check if we have already read this file before
             print("Skipped file:", file)
-            continue                                    # if so, continue to the next file
+            continue                                                          # if so, continue to the next file
 
         if idx-(val*88) == 88:
             break

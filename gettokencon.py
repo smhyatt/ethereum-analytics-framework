@@ -23,7 +23,6 @@ def getTokenContracts(path, jsonfile):
         if 'to_address' in di:
             toAdr = di['to_address']
             if not toAdr == '0x0000000000000000000000000000000000000000':
-                # print(di['to_address'])
                 conToConList.append(di['to_address'])
 
     return conToConList
@@ -62,7 +61,7 @@ def main():
 if __name__ == '__main__':
     startTime = time.time()
     main()
-    print("Total time: --- %s seconds ---" % (time.time() - startTime))
-
-
+    totalTime = time.time() - startTime
+    totalTime = float("{0:.3f}".format(totalTime))
+    print("Total time: {0} seconds.".format(totalTime))
 

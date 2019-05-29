@@ -5,16 +5,13 @@ import h5py
 import time
 import re
 
-
 ownerConsList = []
 ownerHashList = []
-
 
 
 def getAddr(st):
     s = re.split('/|"', st)
     return str(s[len(s)-2])
-
 
 
 def ownerContracts(name, node):
@@ -27,7 +24,6 @@ def ownerContracts(name, node):
         ownerConsList.append(insList)
 
 
-
 def ownerHashes(name, node):
     global ownerHashList
 
@@ -36,7 +32,6 @@ def ownerHashes(name, node):
         hashval = str(val[1])
         insList = [ownerAdr, hashval]
         ownerHashList.append(insList)
-
 
 
 def getBestCluster(X, picName):
@@ -126,7 +121,6 @@ def getCopiesX(dic):
     return np.array(result)
 
 
-
 def main():
     filename = 'database/CC/contcdata.hdf5'
     f = h5py.File(filename, 'r')
@@ -144,12 +138,13 @@ def main():
     getBestCluster(X2, "2-number-clusters-total-copies-unique-owners-for-each-contract")
     getBestCluster(X3, "3-number-clusters-contracts-per-owner-and-occurrences-of-each-number-of-contracts-per-owner")
 
-
     f.close()
+
 
 if __name__ == '__main__':
     startTime = time.time()
     main()
-    print("Total time: --- %s seconds ---" % (time.time() - startTime))
-
+    totalTime = time.time() - startTime
+    totalTime = float("{0:.3f}".format(totalTime))
+    print("Total time: {0} seconds.".format(totalTime))
 

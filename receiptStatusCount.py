@@ -5,7 +5,6 @@ import gzip
 
 
 def receiptStatusCnt(path, jsonfile):
-
     openFile = os.path.join(path, jsonfile)
 
     totalCnt = 0
@@ -33,7 +32,7 @@ def receiptStatusCnt(path, jsonfile):
 
 
 def main():
-    path = "trans"
+    path = os.path.expanduser("~/chaindata/ethereum-transactions")
     resDic = {}
     translist, totFail, totSucc, totCnt = ([] for i in range(4)) 
     
@@ -78,6 +77,4 @@ if __name__ == '__main__':
     startTime = time.time()
     main()
     print("Total time: {0:.2f} seconds.").format((time.time() - startTime))
-
-
 

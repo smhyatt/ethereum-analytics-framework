@@ -58,7 +58,5 @@ invokestree:
 segmentedinvokestree:
 	python -u segmentedInvokes.py
 
-
-# filldbs: createinvokes createcc
-
-# cleanrun: cleanall filldbs
+getreceiptcount:
+	python -u receiptStatusCount.py

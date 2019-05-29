@@ -3,11 +3,7 @@ import time
 import gzip
 
 
-
-
-
 def getContractNames(path, jsonfile):
-
     openFile = os.path.join(path, jsonfile)
 
     allList = []            # all data (list of dictionaries)
@@ -20,7 +16,6 @@ def getContractNames(path, jsonfile):
             line = jfile.readline().decode('utf-8')
 
     CCList = []             # contract creation data list
-
     for di in allList:
         if 'receipt_contract_address' in di:
             CCList.append(di['receipt_contract_address'])
@@ -55,11 +50,10 @@ def main():
 
 
 
-
 if __name__ == '__main__':
     startTime = time.time()
     main()
-    print("Total time: --- %s seconds ---" % (time.time() - startTime))
-
-
+    totalTime = time.time() - startTime
+    totalTime = float("{0:.3f}".format(totalTime))
+    print("Total time: {0} seconds.".format(totalTime))
 
