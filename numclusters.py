@@ -147,4 +147,3 @@ if __name__ == '__main__':
     totalTime = time.time() - startTime
     totalTime = float("{0:.3f}".format(totalTime))
     print("Total time: {0} seconds.".format(totalTime))
-

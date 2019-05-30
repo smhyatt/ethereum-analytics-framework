@@ -30,7 +30,7 @@ def getTokenContracts(path, jsonfile):
 
 
 def main():
-    path = "../ethereum-token-transfers"
+    path = os.path.expanduser("~/chaindata/ethereum-token-transfers")
     
     filelist = os.listdir(path)
 

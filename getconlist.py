@@ -25,7 +25,7 @@ def getContractNames(path, jsonfile):
 
 
 def main():
-    path = "../ethereumchain"
+    path = os.path.expanduser("~/chaindata/ethereum-transactions")
     filelist = os.listdir(path)
     translist = []
     for file in filelist:
