@@ -3,7 +3,7 @@
 outputpath=results/numclusters
 mkdir -p $outputpath
 
-python -u numclusters.py
+python -u numclusters.py 2000
 
 git pull
 git add $outputpath/*
