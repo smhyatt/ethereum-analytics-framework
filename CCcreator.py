@@ -49,7 +49,6 @@ def isContract(addr):
 
 
 def contractCreation(contCDB, ownership, ownerFallouts, CCList):
-    global tuui_web3
     global curFromAdr
     print("Length of CCList", len(CCList))
 

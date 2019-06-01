@@ -3,8 +3,8 @@ import os, json
 import h5py
 import time
 import gzip
-import re
 import sys
+import re
 
 contractDict, tokenContractDict = ({} for i in range(2)) 
 
