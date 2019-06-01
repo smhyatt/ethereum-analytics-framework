@@ -59,7 +59,7 @@ def plotClustering(clusters, X, theType, picName):
     else:
         plt.xlabel('The number of times the same amount of contracts occurs.') 
         plt.ylabel('The number of contracts per owner.')
-    plt.savefig('results/clusters/'+str(picName)+'.png')
+    plt.savefig('results/clusters/'+str(picName)+str(clusters)+'.png')
     plt.close()
 
 

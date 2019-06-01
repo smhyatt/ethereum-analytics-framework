@@ -34,9 +34,9 @@ def ownerHashes(name, node):
         ownerHashList.append(insList)
 
 
-def getBestCluster(X, picName):
+def getBestCluster(X, Kn, stepSze, picName):
     Sum_of_squared_distances = []
-    K = range(1,15)
+    K = range(1, Kn, (int(Kn/15)))
     for k in K:
         km = KMeans(n_clusters=k)
         km = km.fit(X)
@@ -121,7 +121,9 @@ def getCopiesX(dic):
     return np.array(result)
 
 
-def main():
+def main(arg):
+    Kn = int(arg[1])
+
     filename = 'database/CC/contcdata.hdf5'
     f = h5py.File(filename, 'r')
 
@@ -134,16 +136,16 @@ def main():
     X2 = getCopiesX(hashOccursD)    # [number of times a contract occurs more than once, number unique owners using contract]
     X3 = createContractX()          # [number of contracts per owner, occurences of each number of contracts per owner]
 
-    getBestCluster(X1, "1-number-clusters-contracts-per-owners-unique-contracts-per-owner")
-    getBestCluster(X2, "2-number-clusters-total-copies-unique-owners-for-each-contract")
-    getBestCluster(X3, "3-number-clusters-contracts-per-owner-and-occurrences-of-each-number-of-contracts-per-owner")
+    getBestCluster(X1, Kn, str(Kn)+"1-number-clusters-contracts-per-owners-unique-contracts-per-owner")
+    getBestCluster(X2, Kn, str(Kn)+"2-number-clusters-total-copies-unique-owners-for-each-contract")
+    getBestCluster(X3, Kn, str(Kn)+"3-number-clusters-contracts-per-owner-and-occurrences-of-each-number-of-contracts-per-owner")
 
     f.close()
 
 
 if __name__ == '__main__':
     startTime = time.time()
-    main()
+    main(sys.argv)
     totalTime = time.time() - startTime
     totalTime = float("{0:.3f}".format(totalTime))
     print("Total time: {0} seconds.".format(totalTime))
