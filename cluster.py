@@ -37,7 +37,7 @@ def ownerHashes(name, node):
 
 
 def plotClustering(clusters, X, theType, picName):
-    kmeans = KMeans(n_clusters=clusters, init='random', n_init=10)
+    kmeans = KMeans(n_clusters=clusters, init='k-means++')
     kmeans.fit(X) 
     print(kmeans.cluster_centers_) 
     print(kmeans.labels_)  
@@ -59,7 +59,7 @@ def plotClustering(clusters, X, theType, picName):
     else:
         plt.xlabel('The number of times the same amount of contracts occurs.') 
         plt.ylabel('The number of contracts per owner.')
-    plt.savefig('results/clusters/'+str(picName)+str(clusters)+'.png')
+    plt.savefig('results/clusters/'+'cluster++'+str(picName)+str(clusters)+'.png')
     plt.close()
 
 
