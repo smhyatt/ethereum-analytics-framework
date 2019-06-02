@@ -35,7 +35,7 @@ def ownerHashes(name, node):
         ownerHashList.append(insList)
 
 
-def getBestCluster(X, Kn, stepSze, picName):
+def getBestCluster(X, Kn, picName):
     Sum_of_squared_distances = []
     K = range(1, Kn, (int(Kn/15)))
     for k in K:
