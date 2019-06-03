@@ -5,8 +5,8 @@ import queue
 import h5py
 import time
 import gzip
-import re
 import sys
+import re
 
 global curContract
 global curFromAdr
@@ -332,7 +332,7 @@ def main(arg):
     tokenContractDict = dict.fromkeys(tokenLst)
 
 
-    path = "/home/crj405/sarah/ethereumchain"
+    path = os.path.expanduser("~/chaindata/ethereum-transactions")
     filelist = os.listdir(path)
     translist = []
     for file in filelist:

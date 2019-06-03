@@ -1,6 +1,6 @@
 #!/bin/bash
-files=database/*/*.zip
+files=database/*/*.hdf5
 for f in $files
 do
-  unzip $f &
+  zip $f.zip $f &
 done
