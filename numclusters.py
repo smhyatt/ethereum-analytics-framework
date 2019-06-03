@@ -37,7 +37,7 @@ def ownerHashes(name, node):
 
 def getBestCluster(X, Kn, picName):
     Sum_of_squared_distances = []
-    K = range(1, Kn, (int(Kn/15)))
+    K = range(1, Kn)
     for k in K:
         km = KMeans(n_clusters=k)
         km = km.fit(X)

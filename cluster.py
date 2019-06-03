@@ -53,6 +53,9 @@ def plotClustering(clusters, X, theType, picName):
     if theType=='hashperowner':  # [number of contracts per owner, number unique contracts per owner] 
         plt.xlabel('The number of contracts per owner.') 
         plt.ylabel('The number of unique contracts per owner.')
+    if theType=='uniqueperowner':
+        plt.xlabel('The number of unique contracts per owner.')
+        plt.ylabel('The number of contracts per owner.') 
     if theType=='hashallcopies': # [number of times contract occurs, unique owners using contract]
         plt.xlabel('The number of times a contract occurs more than once.') 
         plt.ylabel('The number of unique owners using each copied contract.')
@@ -150,7 +153,7 @@ def main(arg):
     X2 = getCopiesX(hashOccursD)    # [number of times a contract occurs more than once, number unique owners using contract]
     X3 = createContractX()          # [number of contracts per owner, occurences of each number of contracts per owner]
 
-    plotClustering(nCluster1, X1, 'hashperowner', '1-clusters-contracts-per-owners-unique-contracts-per-owner')
+    plotClustering(nCluster1, X1, 'uniqueperowner', '1-clusters-contracts-per-owners-unique-contracts-per-owner')
     plotClustering(nCluster2, X2, 'hashallcopies', '2-clusters-total-copies-unique-owners-for-each-contract')
     plotClustering(nCluster3, X3, 'consperowner', '3-clusters-contracts-per-owner-and-occurrences-of-each-number-of-contracts-per-owner')
 
