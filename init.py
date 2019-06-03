@@ -4,5 +4,5 @@ setup(name='ethereum_framework_utils',
         author='Sarah Hyatt',
         author_email='zfj900@alumni.ku.dk',
         version='1.0',
-        install_requires=['scikit-learn', 'h5py']
+        install_requires=['scikit-learn', 'h5py', 're', 'matplotlib']
      )
