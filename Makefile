@@ -47,6 +47,9 @@ numclusters:
 clusters:
 	./clusters.sh	
 
+multiclusters:
+	./multiclusters.sh
+
 treesetup:
 	rm -rf database/framework/*
 	-mkdir -p database/framework
