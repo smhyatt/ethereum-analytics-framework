@@ -61,3 +61,9 @@ segmentedinvokestree:
 getreceiptcount:
 	python -u receiptStatusCount.py
 
+createcontractlist:
+	python -u getconlist.py
+
+createtokenlist:
+	python -u gettokencon.py
+
