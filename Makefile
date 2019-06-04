@@ -62,8 +62,10 @@ getreceiptcount:
 	python -u receiptStatusCount.py
 
 createcontractlist:
+	echo '' > contractlist.txt
 	python -u getconlist.py
 
 createtokenlist:
+	echo '' > tokencontractlist.txt
 	python -u gettokencon.py
 
