@@ -64,6 +64,8 @@ def main():
     totalSucc = sum(totSucc)
     totalFail = sum(totFail)
 
+    print("The total number of transactions:", totalTran)
+
     totalReceipts    = totalSucc+totalFail
     totalReceiptsPct = (totalReceipts/totalTran)*100
     print("{0:.2f}% of transactions contain a receipt_status.".format(totalReceiptsPct))
